@@ -109,7 +109,23 @@
     </div>
   </div>
 </form>
+    
+    <iframe id="myiframe" src="index.html" height="200" width="300" title="Iframe Example"></iframe>
         
-
+    <script>
+    function injectJS() {
+  var iFrameHead = window.frames["myiframe"].document.getElementsByTagName("head")[0];
+  var myscript = document.createElement('script');
+  myscript.type = 'text/javascript';
+  myscript.src = '  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/b05ace8a-b02d-476c-9db8-711dde419a99.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();'; // replace this with your SCRIPT
+  iFrameHead.appendChild(myscript);
+}
+    </script>
 </body>
 </html>

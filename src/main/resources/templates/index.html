@@ -5,7 +5,11 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
+        
   window._mfq = window._mfq || [];
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) { 
+            window._mfq.push(["tag","Page Reloaded"]);
+ };
   (function() {
     var mf = document.createElement("script");
     mf.type = "text/javascript"; mf.defer = true;

@@ -7,15 +7,22 @@
     <script type="text/javascript">
         
   window._mfq = window._mfq || [];
-        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) { 
-            window._mfq.push(["tag","Page Reloaded"]);
- };
+
   (function() {
     var mf = document.createElement("script");
     mf.type = "text/javascript"; mf.defer = true;
     mf.src = "//cdn.mouseflow.com/projects/b05ace8a-b02d-476c-9db8-711dde419a99.js";
     document.getElementsByTagName("head")[0].appendChild(mf);
   })();
+        if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  window._mfq.push(["tag","Page-Reloaded"]); 
+} else {
+  console.info( "This page is not reloaded");
+}
 </script>
 </head>
 <body>
